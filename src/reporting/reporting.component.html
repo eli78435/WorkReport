@@ -1,0 +1,23 @@
+<p>
+  {{ dateTime | date:'dd/MM/yyyy HH:mm' }}
+</p>
+
+<!-- report started -->
+<ng-container *ngIf=reportStarted>
+  <button (click)='stopReport()'>Stop</button>
+</ng-container>
+
+<!-- report not started -->
+<ng-container *ngIf=!reportStarted>
+  <button (click)='startReport()'>Start</button>
+</ng-container>
+
+<div *ngIf=start>
+  <p>
+    Start: {{ start | date:'dd/MM/yyyy HH:mm' }}
+  </p>
+
+  <p>
+    End: {{ end | date:'dd/MM/yyyy HH:mm' }}
+  </p>
+</div>
